@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { PATH } from '@/routes/path';
-import MenuItem from '@/components/menu/MenuItem';
+import MenuItem from '@/components/sidebar-menu/MenuItem';
 import menuPopulationIcon from '@/assets/menu-population.svg';
 import menuSunIcon from '@/assets/menu-sun.svg';
 
@@ -18,7 +18,7 @@ const menuItems = [
   },
 ];
 
-const Menu: React.FC = () => {
+const SibarMenu: React.FC = () => {
   const location = useLocation();
 
   return (
@@ -39,4 +39,4 @@ const Menu: React.FC = () => {
   );
 };
 
-export default Menu;
+export default SibarMenu;

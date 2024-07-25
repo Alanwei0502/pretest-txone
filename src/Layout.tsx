@@ -1,13 +1,13 @@
 import { Outlet } from 'react-router-dom';
-import Header from './components/header';
-import Menu from './components/menu';
+import Header from '@/components/header';
+import SibarMenu from '@/components/sidebar-menu';
 
-function Layout() {
+function App() {
   return (
     <>
       <Header />
       <div className='flex h-screen-minus-header w-full'>
-        <Menu />
+        <SibarMenu />
         <main className='flex-grow-1 p-10 bg-transparent'>
           <Outlet />
         </main>
@@ -16,4 +16,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default App;

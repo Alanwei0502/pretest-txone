@@ -1,15 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { PATH } from './path';
-import ErrorPage from '../pages/error';
-import WeatherForecastPage from '../pages/today-weather';
-import PopulationPage from '../pages/population';
-import Layout from '../Layout';
 import Home from '@/pages/home';
+import ErrorPage from '@/pages/error';
+import WeatherForecastPage from '@/pages/today-weather';
+import PopulationPage from '@/pages/population';
+import App from '@/Layout';
 
 const appRouter: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <App />,
     children: [
       {
         index: true,
