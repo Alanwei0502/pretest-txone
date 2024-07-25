@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import avatarIcon from '@/assets/avatar.svg';
 import arrowIcon from '@/assets/arrow.svg';
+import { Link } from 'react-router-dom';
 
 const UserInfoMenu: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -29,7 +30,9 @@ const UserInfoMenu: React.FC = () => {
       >
         <ul className='bg-white text-center'>
           <li className='hover:bg-gray-100 cursor-pointer px-10 py-2'>
-            Profile
+            <Link to='/profile' onClick={handleToggleDropdownMenu}>
+              Profile
+            </Link>
           </li>
         </ul>
       </div>
