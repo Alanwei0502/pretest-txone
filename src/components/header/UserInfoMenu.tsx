@@ -29,8 +29,12 @@ const UserInfoMenu: React.FC = () => {
         className={`border absolute top-full right-0 ${open ? '' : 'hidden'}`}
       >
         <ul className='bg-white text-center'>
-          <li className='hover:bg-gray-100 cursor-pointer px-10 py-2'>
-            <Link to='/profile' onClick={handleToggleDropdownMenu}>
+          <li>
+            <Link
+              className='hover:bg-gray-100 cursor-pointer px-10 py-2 block'
+              to='/profile'
+              onClick={handleToggleDropdownMenu}
+            >
               Profile
             </Link>
           </li>
