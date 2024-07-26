@@ -91,20 +91,16 @@ const WeatherCard: React.FC<WeatherCardProps> = (props) => {
   }, [city, country, setData, setErrorMsg]);
 
   return (
-    <div className='rounded-lg text-primary bg-white w-full border-gray-400 border p-8 min-h-[400px]'>
-      {isLoading && (
-        <div className='text-black w-full h-full flex items-center justify-center'>
+    <div className='rounded-lg text-primary bg-white w-full border-gray-400 border p-8 min-h-[400px] relative'>
+      {isLoading ? (
+        <div className='text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
           <img src={loadingIcon} alt='loading icon' width={64} height={64} />
         </div>
-      )}
-
-      {!isLoading && isNoData && (
+      ) : isNoData ? (
         <div className='text-black w-full h-full flex items-center justify-center'>
           No Data
         </div>
-      )}
-
-      {!isLoading && !isNoData && (
+      ) : (
         <>
           <div className='flex justify-between'>
             <div className='flex'>

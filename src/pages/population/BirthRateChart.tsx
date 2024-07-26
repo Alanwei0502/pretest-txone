@@ -43,9 +43,9 @@ const BirthRateChart: React.FC<BirthRateChartProps> = () => {
   }, [setData]);
 
   return (
-    <div className='max-w-[542px] min-h-[447px] rounded-lg py-9 px-8 border-gray-400 border bg-white'>
+    <div className='max-w-[542px] min-h-[447px] rounded-lg py-9 px-8 border-gray-400 border bg-white relative'>
       {isLoading ? (
-        <div className='text-black w-full h-full flex items-center justify-center'>
+        <div className='text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
           <img src={loadingIcon} alt='loading icon' width={64} height={64} />
         </div>
       ) : (
