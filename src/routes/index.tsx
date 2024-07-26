@@ -4,7 +4,7 @@ import Home from '@/pages/home';
 import ErrorPage from '@/pages/error';
 import WeatherForecastPage from '@/pages/today-weather';
 import PopulationPage from '@/pages/population';
-import App from '@/Layout';
+import App from '@/App';
 
 const appRouter: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
   {
