@@ -18,11 +18,21 @@ const menuItems = [
   },
 ];
 
-const SibarMenu: React.FC = () => {
+interface SibarMenuProps {
+  isShowMobileMenu: boolean;
+  setIsShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SibarMenu: React.FC<SibarMenuProps> = (props) => {
+  const { isShowMobileMenu, setIsShowMobileMenu } = props;
   const location = useLocation();
 
   return (
-    <nav className='border-r-[1px] border-r-gray-200 bg-white'>
+    <nav
+      className={`border-r-[1px] border-r-gray-200 bg-white h-screen-minus-header transition-transform absolute z-10 ${
+        isShowMobileMenu ? '' : '-translate-x-full'
+      } md:static md:translate-x-0`}
+    >
       <ul className='pt-10'>
         {menuItems.map((item, index) => (
           <MenuItem
@@ -30,6 +40,7 @@ const SibarMenu: React.FC = () => {
             to={item.to}
             icon={item.icon}
             active={location.pathname.includes(item.to)}
+            setIsShowMobileMenu={setIsShowMobileMenu}
           >
             {item.label}
           </MenuItem>

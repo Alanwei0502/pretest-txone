@@ -19,10 +19,10 @@ const TodayWeatherPage: React.FC = () => {
   };
 
   return (
-    <section className='w-fit'>
+    <section className='w-fit pb-10'>
       <h1 className='text-4xl w-fit'>Today's Weather 🌤️</h1>
       <div className='mt-10 mb-2'>
-        <div className='flex gap-x-3.5'>
+        <div className='flex gap-x-3.5 gap-y-2 flex-wrap'>
           <TextField
             label='City'
             id='city'

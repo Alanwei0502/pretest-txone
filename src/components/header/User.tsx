@@ -3,7 +3,7 @@ import avatarIcon from '@/assets/avatar.svg';
 import arrowIcon from '@/assets/arrow.svg';
 import { Link } from 'react-router-dom';
 
-const UserInfoMenu: React.FC = () => {
+const User: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   const handleToggleDropdownMenu = () => {
@@ -16,16 +16,17 @@ const UserInfoMenu: React.FC = () => {
         className='flex gap-4 cursor-pointer'
         onClick={handleToggleDropdownMenu}
       >
-        <img src={avatarIcon} alt='avatar' />
-        <p>Alan</p>
+        <img src={avatarIcon} alt='avatar' className='w-6 h-6 md:w-5 md:h-5' />
+        <p className='hidden md:block'>Alan</p>
         <img
           src={arrowIcon}
           alt='arrow'
-          className={` transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`hidden md:block transition-transform ${
+            open ? 'rotate-180' : ''
+          }`}
         />
       </div>
       <div
-        id='menu'
         className={`border absolute top-full right-0 ${open ? '' : 'hidden'}`}
       >
         <ul className='bg-white text-center'>
@@ -44,4 +45,4 @@ const UserInfoMenu: React.FC = () => {
   );
 };
 
-export default UserInfoMenu;
+export default User;

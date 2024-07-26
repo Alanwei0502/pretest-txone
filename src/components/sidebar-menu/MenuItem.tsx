@@ -6,10 +6,16 @@ interface MenuItemProps
     React.RefAttributes<HTMLAnchorElement> {
   icon?: string;
   active?: boolean;
+  setIsShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
-  const { icon, children, active, ...restProps } = props;
+  const { icon, children, active, setIsShowMobileMenu, ...restProps } = props;
+
+  const handleCloseMobileMenu = () => {
+    setIsShowMobileMenu(false);
+  };
+
   return (
     <li className='cursor-pointer'>
       <Link
@@ -19,6 +25,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
             ? 'bg-primary-100 border-r-4 border-primary'
             : 'opacity-40 border-transparent'
         }`}
+        onClick={handleCloseMobileMenu}
       >
         <img src={icon} alt='icon' />
         {children}

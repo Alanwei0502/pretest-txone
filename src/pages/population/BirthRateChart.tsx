@@ -43,15 +43,15 @@ const BirthRateChart: React.FC<BirthRateChartProps> = () => {
   }, [setData]);
 
   return (
-    <div className='max-w-[542px] h-[447px] rounded-lg py-9 px-8 border-gray-400 border bg-white'>
+    <div className='max-w-[542px] min-h-[447px] rounded-lg py-9 px-8 border-gray-400 border bg-white'>
       {isLoading ? (
         <div className='text-black w-full h-full flex items-center justify-center'>
           <img src={loadingIcon} alt='loading icon' width={64} height={64} />
         </div>
       ) : (
         <>
-          <div className='flex justify-between'>
-            <h2 className='text-xl font-semibold mb-4 flex gap-1 items-center text-primary'>
+          <div className='flex justify-between flex-wrap mb-4'>
+            <h2 className='text-xl font-semibold flex gap-1 items-center text-primary'>
               <img
                 src={locationIcon}
                 alt='location icon'
@@ -64,7 +64,7 @@ const BirthRateChart: React.FC<BirthRateChartProps> = () => {
               source: Ministry of the Interior
             </div>
           </div>
-          <ResponsiveContainer>
+          <ResponsiveContainer height={325}>
             <LineChart
               data={data}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}

@@ -91,7 +91,7 @@ const WeatherCard: React.FC<WeatherCardProps> = (props) => {
   }, [city, country, setData, setErrorMsg]);
 
   return (
-    <div className='rounded-lg text-primary bg-white w-full border-gray-400 border p-8 h-[400px]'>
+    <div className='rounded-lg text-primary bg-white w-full border-gray-400 border p-8 min-h-[400px]'>
       {isLoading && (
         <div className='text-black w-full h-full flex items-center justify-center'>
           <img src={loadingIcon} alt='loading icon' width={64} height={64} />

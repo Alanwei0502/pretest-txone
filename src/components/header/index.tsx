@@ -1,12 +1,22 @@
 import React from 'react';
 import Logo from './Logo';
-import UserInfoMenu from './UserInfoMenu';
+import User from './User';
+import Menu from './Menu';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  setIsShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header: React.FC<HeaderProps> = (props) => {
+  const { setIsShowMobileMenu } = props;
+
   return (
-    <header className='bg-white flex justify-between items-center shadow-header-shadow h-16 p-8 relative z-10'>
+    <header className='bg-white flex justify-between items-center shadow-header-shadow h-16 p-2 z-20 sticky top-0 md:p-8'>
       <Logo />
-      <UserInfoMenu />
+      <div className='flex items-center gap-x-6'>
+        <User />
+        <Menu setIsShowMobileMenu={setIsShowMobileMenu} />
+      </div>
     </header>
   );
 };
